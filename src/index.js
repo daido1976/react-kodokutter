@@ -1,8 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Tweet from "./Tweet";
 
 const App = () => (
-   <div>Hello React!</div>
- )
+  <div>
+    <Tweet content="Hello!" />
+    <Tweet content="World!" />
+  </div>
+);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById("root"));
