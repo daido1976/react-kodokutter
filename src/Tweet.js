@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 const Tweet = props => (
   <div className="tweet">
     <div className="icon-container">
-      <FontAwesomeIcon icon={props.icon} />
+      <FontAwesomeIcon icon={props.icon} style={{ color: props.color }} />
     </div>
     <div className="body-container">
       <div className="status-display">

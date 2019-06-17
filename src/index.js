@@ -8,12 +8,14 @@ const App = () => (
   <div>
     <Tweet
       icon={faCube}
+      color="skyblue"
       displayName="Daido Shota"
       accountName="daido1976"
       content="Hello!"
     />
     <Tweet
       icon={faCarrot}
+      color="orange"
       displayName="Yamada Taro"
       accountName="yamada123"
       content="World!"
