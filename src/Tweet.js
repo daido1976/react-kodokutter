@@ -1,19 +1,35 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faHeart as farFaHeart } from "@fortawesome/free-regular-svg-icons";
+import { faHeart as fasFaHeart } from "@fortawesome/free-solid-svg-icons";
 
-const Tweet = props => (
-  <div className="tweet">
-    <div className="icon-container">
-      <FontAwesomeIcon icon={props.icon} style={{ color: props.color }} />
-    </div>
-    <div className="body-container">
-      <div className="status-display">
-        <span className="display-name">{props.displayName}</span>
-        <span className="account-name">@{props.accountName}</span>
+library.add(farFaHeart, fasFaHeart);
+
+const Tweet = props => {
+  const [liked, setLike] = React.useState(false);
+
+  return (
+    <div className="tweet">
+      <div className="icon-container">
+        <FontAwesomeIcon icon={props.icon} style={{ color: props.color }} />
       </div>
-      <div>{props.content}</div>
+      <div className="body-container">
+        <div className="status-display">
+          <span className="display-name">{props.displayName}</span>
+          <span className="account-name">@{props.accountName}</span>
+        </div>
+        <div>{props.content}</div>
+        <div className="status-action">
+          <span>
+            <FontAwesomeIcon
+              icon={liked ? ["fas", "heart"] : ["far", "heart"]}
+            />
+          </span>
+        </div>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default Tweet;
