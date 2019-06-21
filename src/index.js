@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Timeline from "./Timeline";
+import TweetInput from "./TweetInput";
 import "./index.css";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faCarrot, faCube } from "@fortawesome/free-solid-svg-icons";
@@ -8,7 +9,7 @@ import { faCarrot, faCube } from "@fortawesome/free-solid-svg-icons";
 library.add(faCarrot, faCube);
 
 const App = () => {
-  const tweets = [
+  const [tweets, setTweets] = React.useState([
     {
       id: 0,
       icon: "cube",
@@ -25,10 +26,16 @@ const App = () => {
       accountName: "yamada123",
       content: "World!"
     }
-  ];
+  ]);
+
+  const addTweet = React.useCallback(
+    tweet => setTweets(prev => [tweet, ...prev]),
+    [setTweets]
+  );
 
   return (
     <div>
+      <TweetInput addTweet={addTweet} />
       <Timeline tweets={tweets} />
     </div>
   );
