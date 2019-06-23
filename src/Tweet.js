@@ -9,6 +9,7 @@ library.add(farFaHeart, fasFaHeart);
 const Tweet = props => {
   const [liked, setLike] = React.useState(false);
   const toggleLike = React.useCallback(() => setLike(prev => !prev), [setLike]);
+  const iconStyle = liked ? "fas" : "far";
 
   return (
     <div className="tweet">
@@ -24,7 +25,7 @@ const Tweet = props => {
         <div className="status-action">
           <span onClick={toggleLike}>
             <FontAwesomeIcon
-              icon={liked ? ["fas", "heart"] : ["far", "heart"]}
+              icon={[iconStyle, "heart"]}
               style={liked ? { color: "red" } : null}
             />
           </span>
