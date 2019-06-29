@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
