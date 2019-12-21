@@ -13,7 +13,7 @@ const TweetInput = props => {
         id: new Date().getTime(),
         icon: ["far", "user"],
         displayName: "hoge",
-        accoutName: "fuga",
+        accountName: "fuga",
         content: textareaRef.current.value
       });
     }
