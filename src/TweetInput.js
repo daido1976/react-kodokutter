@@ -8,7 +8,7 @@ library.add(faUser);
 const TweetInput = props => {
   const textareaRef = React.useRef(null);
   const sendTweet = React.useCallback(() => {
-    if (textareaRef.current) {
+    if (textareaRef.current.value) {
       props.addTweet({
         id: new Date().getTime(),
         icon: ["far", "user"],
@@ -16,6 +16,10 @@ const TweetInput = props => {
         accountName: "fuga",
         content: textareaRef.current.value
       });
+      textareaRef.current.value = null;
+    } else {
+      // eslint-disable-next-line no-undef
+      alert("tweetを入力してください");
     }
   }, [props]);
 
